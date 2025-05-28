@@ -17,9 +17,11 @@ app.get('/medicos', async (req, res) => {
     console.error("Erro ao buscar o médico:", error);
     res.status(500).json({ mensagem: "Erro ao buscar os dados." })
   }
-})
+});
 
-app.listen(8080, () => {
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
   const date = new Date();
   console.log(`Servidor iniciado em ${date}`)
 })
